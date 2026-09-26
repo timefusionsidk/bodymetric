@@ -1,0 +1,18 @@
+interface LogoProps {
+  className?: string
+}
+
+// The mark reads as a measurement tick between two points — a small, literal
+// nod to "taking a measurement" without leaning on a generic heart/pulse icon.
+export default function Logo({ className }: LogoProps) {
+  return (
+    <span className={`inline-flex items-center gap-2 ${className ?? ''}`}>
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="#4B3FE0" />
+        <path d="M9 22V10h4.4c2.1 0 3.4 1.1 3.4 2.9 0 1.2-.6 2-1.6 2.4 1.2.4 2 1.4 2 2.8 0 2-1.5 3.1-3.8 3.1H9Zm2.6-7h1.6c.9 0 1.4-.4 1.4-1.2s-.5-1.2-1.4-1.2h-1.6v2.4Zm0 4.8h1.9c1 0 1.5-.5 1.5-1.3s-.5-1.3-1.5-1.3h-1.9v2.6Z" fill="#FAFAF7" />
+        <circle cx="23" cy="10.5" r="2" fill="#FAFAF7" />
+      </svg>
+      <span className="font-display font-bold text-lg tracking-tight text-ink">BodyMetric</span>
+    </span>
+  )
+}
