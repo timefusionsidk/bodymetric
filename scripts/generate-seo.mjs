@@ -9,7 +9,7 @@ const distDir = resolve(root, 'dist')
 
 function loadEnvValue(key) {
   if (process.env[key]) return process.env[key]
-  for (const file of ['.env.local', '.env']) {
+  for (const file of ['.env.local', '.env.production', '.env']) {
     const path = resolve(root, file)
     if (existsSync(path)) {
       const match = readFileSync(path, 'utf-8').match(new RegExp(`^${key}=(.*)$`, 'm'))
