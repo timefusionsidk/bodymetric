@@ -19,18 +19,12 @@ function loadEnvValue(key) {
   return null
 }
 
-const siteUrl = (loadEnvValue('VITE_SITE_URL') || 'https://your-domain.example').replace(/\/$/, '')
+const configuredUrl = loadEnvValue('VITE_SITE_URL')
+const siteUrl = ((configuredUrl && !configuredUrl.includes('.example')) ? configuredUrl : 'https://bodymetric-silk.vercel.app').replace(/\/$/, '')
 
 if (!existsSync(distDir)) {
   console.warn('[generate-seo] dist/ not found, skipping (did the build run?)')
   process.exit(0)
-}
-
-if (siteUrl === 'https://your-domain.example') {
-  console.warn(
-    '[generate-seo] VITE_SITE_URL is not set. Shipping robots.txt/sitemap.xml with a placeholder domain. ' +
-    'Set VITE_SITE_URL in your environment before deploying to production.'
-  )
 }
 
 writeFileSync(
@@ -42,6 +36,7 @@ const pages = [
   { path: '/', priority: '1.0', freq: 'monthly' },
   { path: '/privacy', priority: '0.3', freq: 'yearly' },
   { path: '/terms', priority: '0.3', freq: 'yearly' },
+  { path: '/contact', priority: '0.3', freq: 'yearly' },
 ]
 
 const urls = pages
