@@ -19,6 +19,9 @@ export default function Footer() {
           <Link to="/terms" className="hover:text-ink transition-colors">
             Terms of Use
           </Link>
+          <Link to="/contact" className="hover:text-ink transition-colors">
+            Contact
+          </Link>
           <a href="/#faq" className="hover:text-ink transition-colors">
             FAQ
           </a>
