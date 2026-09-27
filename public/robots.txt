@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bodymetric-silk.vercel.app/sitemap.xml
+Sitemap: https://bodymetric.timefusionsidk.com/sitemap.xml
