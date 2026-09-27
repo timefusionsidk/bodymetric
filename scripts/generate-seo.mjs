@@ -20,7 +20,7 @@ function loadEnvValue(key) {
 }
 
 const configuredUrl = loadEnvValue('VITE_SITE_URL')
-const siteUrl = ((configuredUrl && !configuredUrl.includes('.example')) ? configuredUrl : 'https://bodymetric-silk.vercel.app').replace(/\/$/, '')
+const siteUrl = ((configuredUrl && !configuredUrl.includes('.example')) ? configuredUrl : 'https://bodymetric.timefusionsidk.com').replace(/\/$/, '')
 
 if (!existsSync(distDir)) {
   console.warn('[generate-seo] dist/ not found, skipping (did the build run?)')
